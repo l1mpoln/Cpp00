@@ -6,7 +6,7 @@
 /*   By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:36:26 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/07/28 04:33:55 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/07/31 00:50:25 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,15 @@ void Phonebook::create_contact(int i, std::string first_name, std::string second
 {
     phonebook[i].ft_set_data(first_name, second_name, nick, number, secret);
 }
+
+void Phonebook::remove_oldest_contact()
+    {
+        // Просто сдвигаем элементы массива влево, чтобы удалить самый старый контакт (с индексом 0)
+        for (int i = 0; i < 7; i++)
+        {
+            phonebook[i] = phonebook[i + 1];
+        }
+
+        // Очищаем последний элемент массива, чтобы избежать дублирования данных
+        phonebook[7].ft_set_data("", "", "", "", "");
+    }

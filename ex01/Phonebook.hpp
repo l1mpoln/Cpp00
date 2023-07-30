@@ -6,7 +6,7 @@
 /*   By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:36:40 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/07/28 04:55:54 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/07/31 00:47:49 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 public:
     Phonebook();
     ~Phonebook();
+    void remove_oldest_contact();
     void create_contact(int i, std::string first_name, std::string second_name, std::string nick, std::string number, 
         std::string secret);
     Contact get_contact(int i);

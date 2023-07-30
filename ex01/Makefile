@@ -6,7 +6,7 @@
 #    By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/28 00:33:46 by vkuzmin           #+#    #+#              #
-#    Updated: 2023/07/30 19:54:38 by vkuzmin          ###   ########.fr        #
+#    Updated: 2023/07/30 22:21:43 by vkuzmin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJS		=	$(SRC:.cpp=.o)
 
 COMPILE		=	clang++
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=	-Wall -Wextra -Werror --std=c++98 
 
 EXE_NAME	=	-o phonebook
 

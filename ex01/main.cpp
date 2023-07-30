@@ -6,7 +6,7 @@
 /*   By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:34:19 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/07/30 19:54:26 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/07/31 00:50:37 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ void    ft_add(Phonebook *phonebook, int i)
     std::string nick;
     std::string number;
     std::string secret;
+
+    if (i >= 8)
+    {
+        std::cout << "The phonebook is full. Deleting the oldest contact..." << std::endl;
+        phonebook->remove_oldest_contact();
+        i = 7;
+    }
 
     std::cout << "Please enter the contact's first name:\n> ";
     if (!std::getline(std::cin, first) || first.empty())
@@ -46,14 +53,14 @@ void    ft_add(Phonebook *phonebook, int i)
 void ft_search(Phonebook *phonebook)
 {
     std::string user_index;
-    int index;
+    int index = 0;
 
     std::cout << std::setw(10) << "Index" << " | "
               << std::setw(10) << "First name" << " | "
               << std::setw(10) << "Last name" << " | "
               << std::setw(10) << "Nickname" << std::endl;
 
-    for (int index = 0; index < 8; index++) 
+    for (int index = 0; index < 8; index++)
     {
         std::string first = phonebook->get_first(index);
         std::string second = phonebook->get_second(index);
@@ -73,10 +80,17 @@ void ft_search(Phonebook *phonebook)
                   << std::setw(10) << second << " | "
                   << std::setw(10) << nick << std::endl;
     }
-    std::cout << "Enter the contact index" << std::endl;\
+    std::cout << "Enter the contact index" << std::endl;
     std::getline(std::cin, user_index);
     if (std::cin.eof())
         return ;
+    index = user_index[0] - 48;
+    if (user_index[1] || index < 0 || index > 7)
+    {
+        std::cout << "Invalid index, how can u fuck up this?" << std::endl;
+        return ;
+    }
+    phonebook->get_contact(index).ft_print();
 }
 
 int main(void)
@@ -103,5 +117,4 @@ int main(void)
             return (0);
         }
     }
-    
 }

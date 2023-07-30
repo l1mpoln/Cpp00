@@ -6,7 +6,7 @@
 /*   By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:34:48 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/07/30 19:46:08 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/07/30 20:37:44 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <exception>
 # include "Contact.hpp"
 # include "Phonebook.hpp"
 

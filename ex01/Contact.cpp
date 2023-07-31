@@ -6,7 +6,7 @@
 /*   By: vkuzmin <zxcmasterass@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 00:40:31 by vkuzmin           #+#    #+#             */
-/*   Updated: 2023/07/28 04:54:02 by vkuzmin          ###   ########.fr       */
+/*   Updated: 2023/07/31 03:26:31 by vkuzmin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ Contact::~Contact()
 
 void Contact::ft_print() const
 {
+    if (this->first_name.empty())
+    {
+        std::cout << "-> There is no info, fuck off" << std::endl;
+        return ;
+    }
     std::cout << "First Name -> " << this->first_name << std::endl;
     std::cout << "Second Name -> " << this->second << std::endl;
     std::cout << "Nickname -> " << this->nick << std::endl;
